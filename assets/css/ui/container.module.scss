@@ -1,0 +1,10 @@
+@import '../../media-queries.scss';
+
+.container{
+    margin-inline: auto;
+    max-width: 96rem;
+    width: calc(11/12 * 100%);
+    @include respond-below(xl){
+        width: calc(4/5 * 100%);
+    }
+}

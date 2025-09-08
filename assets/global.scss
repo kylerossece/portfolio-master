@@ -1,0 +1,35 @@
+@import './media-queries.scss';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+  
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+* {
+    margin: 0;
+  }
+
+ul, ol, li, a {
+list-style: none;
+text-decoration: none;
+}
+
+
+img,
+picture {
+max-width: 100%;
+display: block;
+}
+
+input, button, textarea, select {
+font: inherit;
+}
+
+main{
+    min-height: 100vh;
+}
