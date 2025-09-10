@@ -1,4 +1,4 @@
-@import './media-queries.scss';
+@use './media-queries.scss';
 
 *, *::before, *::after {
     box-sizing: border-box;
