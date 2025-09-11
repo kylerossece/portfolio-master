@@ -1,9 +1,9 @@
-import React from 'react'
+"use client";
+import React from "react";
+import styles from "@/assets/css/background.module.scss";
 
 const Background = () => {
-  return (
-    <div>hero-background</div>
-  )
-}
+  return <div className={styles.background}></div>;
+};
 
-export default {Background}
+export { Background };

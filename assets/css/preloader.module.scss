@@ -1,0 +1,22 @@
+.preloader {
+  background-color: black;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100svw;
+  height: 100svh;
+  font-weight: 200;
+  color: white;
+  font-size: 2rem;
+  span {
+    font-weight: 500;
+    margin-right: 0.5rem;
+  }
+}
+
+.progress {
+  color: white;
+}

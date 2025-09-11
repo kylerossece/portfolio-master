@@ -1,35 +1,48 @@
-@use './media-queries.scss';
+@use "./media-queries.scss";
 
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-  
+
+:root {
+  --font-alt: "Inter", sans-serif;
+}
 html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 * {
-    margin: 0;
-  }
-
-ul, ol, li, a {
-list-style: none;
-text-decoration: none;
+  margin: 0;
 }
 
+ul,
+ol,
+li,
+a {
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
 
 img,
 picture {
-max-width: 100%;
-display: block;
+  max-width: 100%;
+  display: block;
 }
 
-input, button, textarea, select {
-font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-main{
-    min-height: 100vh;
+main {
+  min-height: 100vh;
 }
