@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import styles from "@/assets/css/preloader.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 interface PreloaderProps {
   onComplete: () => void;
 }
@@ -13,6 +13,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
   useGSAP(
     () => {
+      gsap.registerPlugin(ScrambleTextPlugin);
       if (!container.current) return;
 
       const tl = gsap.timeline();
@@ -21,10 +22,10 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       tl.to(
         `.${styles.progress}`,
         {
-          duration: 1,
+          duration: 0.8,
           scrambleText: {
-            text: "LOADING THE WEBSITE",
-            revealDelay: 0.2,
+            text: "Kyle Prestado Portfolio",
+            revealDelay: 0.1,
             oldClass: `${styles.old}`,
           },
           onComplete: () => {
