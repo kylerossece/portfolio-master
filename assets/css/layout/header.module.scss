@@ -1,64 +1,72 @@
-
 @import "../../media-queries.scss";
 
-.header{
-    position: fixed;
-    top: 0;
-    z-index: 40;
-    width: 100%;
-}
-
-.header{
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  &-container {
     margin-top: 1rem;
     border-radius: calc(infinity * 1px);
     padding: 0.5rem;
     transition-property: color, background-color;
-    transition-timing-function:  cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration:500ms;
-    &-bg{
-        border-color: color-mix(in oklab, #fffef9 20%, transparent);
-        background-color: color-mix(in oklab, #060918 60%, transparent);
-        backdrop-filter: blur(8px);
-        box-shadow: inset 0 1px 1px 0 rgb(255 254 249 / 0.3);
-    }
-    &-clear{
-        border-color: transparent;
-        background-color: transparent;
-        backdrop-filter: none;
-    }
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
+  &-bg {
+    border-color: color-mix(in oklab, #fffef9 20%, transparent);
+    background-color: color-mix(in oklab, #060918 60%, transparent);
+    backdrop-filter: blur(8px);
+    box-shadow: inset 0 1px 1px 0 rgb(255 254 249 / 0.3);
+  }
+  &-clear {
+    border-color: transparent;
+    background-color: transparent;
+    backdrop-filter: none;
+  }
 }
 
-.nav{
-    margin-inline-start: 1rem;
-    display: none;
+.nav {
+  margin-inline-start: 1rem;
+  display: none;
+  align-items: center;
+  column-gap: 1.5rem;
+  @include respond-above(lg) {
+    display: flex;
+  }
+  &Grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  a {
+    color: #f9fafb; /* equivalent to text-neutrals-50 */
+    position: relative;
+    display: flex;
+    height: 100%;
     align-items: center;
-    column-gap: 1.5rem;
-    @include respond-above(lg){
-        display: flex;
+    padding: 0.25rem; /* p-1 = 4px */
+    font-size: 0.875rem; /* text-sm */
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 12.25%;
+      height: 1px;
+      transform: scaleX(0);
+      background-image: linear-gradient(
+        to right,
+        transparent,
+        #e5e7eb,
+        transparent
+      ); /* via-neutrals-200 */
+      transition: transform 0.3s ease;
+      transform-origin: center;
     }
-    a{
-        color: #f9fafb; /* equivalent to text-neutrals-50 */
-        position: relative;
-        display: flex;
-        height: 100%;
-        align-items: center;
-        padding: 0.25rem; /* p-1 = 4px */
-        font-size: 0.875rem; /* text-sm */
-        text-transform: uppercase;
-        &::after{
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 12.25%;
-            height: 1px;
-            transform: scaleX(0);
-            background-image: linear-gradient(to right, transparent, #e5e7eb, transparent); /* via-neutrals-200 */
-            transition: transform 0.3s ease;
-            transform-origin: center;
-        }
-        &:hover::after, :focus-visible::after {
-            transform: scaleX(-1);
-        }
+    &:hover::after,
+    :focus-visible::after {
+      transform: scaleX(-1);
     }
+  }
 }

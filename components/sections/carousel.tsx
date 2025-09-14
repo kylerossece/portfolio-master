@@ -55,9 +55,9 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
       }}
       touchEventsTarget={"container"}
       slidesPerView="auto"
-      spaceBetween={15}
-      slidesOffsetAfter={15}
-      slidesOffsetBefore={15}
+      spaceBetween={0}
+      slidesOffsetAfter={0}
+      slidesOffsetBefore={0}
       freeMode={true}
       modules={[FreeMode]}
     >

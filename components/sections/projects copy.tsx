@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import React, { use } from "react";
 import gsap from "gsap";
 import Link from "next/link";
