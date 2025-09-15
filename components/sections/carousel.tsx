@@ -64,7 +64,7 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
       {[...Array(10).keys()].map((item, index) => {
         return (
           <SwiperSlide key={index}>
-            <img src="https://placehold.co/600x600/000000/FFFFFF/png" />
+            <img src="http://picsum.photos/200/300" />
           </SwiperSlide>
         );
       })}
