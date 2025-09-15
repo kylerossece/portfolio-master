@@ -1,22 +1,13 @@
-.card {
-  position: relative;
-  aspect-ratio: 2/3;
-  width: clamp(18rem, 42vmin, 22rem);
-  overflow: hidden;
-  border-radius: 6px;
-  a {
-    display: block;
-    height: 100%;
-    width: 100%;
-    border-radius: 6px;
-    border-color: color-mix(in oklab, #fffef9 30%, transparent);
-  }
+@import "../../media-queries.scss";
+.swiperSlide{
+  width: fit-content;
+  height: fit-content;
 }
-
 .wrapper {
   margin-top: 1rem;
   width: 100%;
 }
+
 
 .buttonWrapper {
   position: relative;
@@ -24,10 +15,27 @@
 }
 
 .button {
+  position: absolute;
   border-color: #2e364f;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
   background-color: color-mix(in oklab, #060918 90%, transparent);
   color: #f0f2fe;
   height: fit-content;
   border-radius: calc(infinity * 1px);
   padding: 1rem;
+
+
+
+}
+
+.right{
+   right: 0;
+   margin-right: 0.5rem;
+}
+
+.left{
+  left: 0;
+  margin-left: 0.5rem;
 }

@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
+import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 import { Pagination, FreeMode } from "swiper/modules";
@@ -18,26 +19,7 @@ import { Container } from "../ui/container";
 type CarouselProps = {
   sectionRef: RefObject<HTMLElement | null>;
 };
-// breakpoints={{
-//     768: {
-//       slidesPerView: 1.8,
-//       spaceBetween: 60,
-//       slidesOffsetAfter: 60,
-//       slidesOffsetBefore: 60,
-//     },
-//     992: {
-//       slidesPerView: 2.5,
-//       spaceBetween: 60,
-//       slidesOffsetAfter: 60,
-//       slidesOffsetBefore: 60,
-//     },
-//     1600: {
-//       slidesPerView: "auto",
-//       spaceBetween: 90,
-//       slidesOffsetAfter: 90,
-//       slidesOffsetBefore: 90,
-//     },
-//   }}
+
 const Carousel = ({ sectionRef }: CarouselProps) => {
   const swiperRef = useRef<SwiperClass | null>(null);
   const { contextSafe } = useGSAP({ scope: sectionRef });
@@ -55,23 +37,26 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
       }}
       touchEventsTarget={"container"}
       slidesPerView="auto"
-      spaceBetween={0}
-      slidesOffsetAfter={0}
-      slidesOffsetBefore={0}
+      spaceBetween={30}
+      slidesOffsetAfter={30}
+      slidesOffsetBefore={30}
       freeMode={true}
       modules={[FreeMode]}
+    
     >
       {[...Array(10).keys()].map((item, index) => {
         return (
-          <SwiperSlide key={index}>
-            <img src="http://picsum.photos/200/300" />
+          <SwiperSlide key={index} className={styles.swiperSlide}>
+  
+            <img src="http://picsum.photos/200/300" width="400" height="600" />
+
           </SwiperSlide>
         );
       })}
-      <button type="button" onClick={scrollPreviousSlide}>
+      <button type="button" onClick={scrollPreviousSlide} className={clsx(styles.button, styles.left)}>
         <Icons.ChevronLeft />
       </button>
-      <button type="button" onClick={scrollNextSlide}>
+      <button type="button" onClick={scrollNextSlide} className={clsx(styles.button, styles.right)}>
         <Icons.ChevronRight />
       </button>
     </Swiper>

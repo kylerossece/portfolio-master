@@ -31,7 +31,8 @@ const Hero = () => {
       scrollTrigger: {
         trigger: titleTextRef.current,
         toggleActions: "restart pause resume reverse",
-        start: "top 90%",
+        start: "top 80%",
+      
       }
     })
 
@@ -51,26 +52,40 @@ const Hero = () => {
             end: 'bottom top',
         }
     });
+  //   gsap.to(sectionRef.current, {
+  //     scrollTrigger: {
+  //         trigger: sectionRef.current,
+  //         pin: true,
+  //         toggleActions: "restart pause resume reverse",
+  //         start: "top top",
+  //         end: "bottom top",
+  //         // pinSpacing: false,
+  //     },
+  // });
+
+
+
 
   }, [preloader]);
+
+  const sectionRef = useRef<HTMLElement | null>(null);
   const titleRef = useRef<HTMLDivElement | null>(null);
   const titleTextRef = useRef<HTMLHeadingElement | null>(null);
-  const container = useRef<HTMLDivElement>(null);
   const fakeContainer = useRef<HTMLDivElement>(null);
   return (
     <>
       <Preloader onComplete={handlePreloaderComplete} />
-      <section className={styles.hero}>
+      <section className={styles.hero} ref={sectionRef}>
         <Background />
-        <Container ref={container}>
+        <Container>
           <div className={styles.title} ref={titleRef}>
             <h1 ref={titleTextRef} className={styles.titleText}>
               Kyle Prestado <br /> Front End Developer
             </h1>
           </div>
         </Container>
-        <div className={styles.fakeContainer} ref={fakeContainer}></div>
       </section>
+      <div className={styles.fakeContainer} ref={fakeContainer}></div>
     </>
   );
 };
