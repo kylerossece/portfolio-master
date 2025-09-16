@@ -1,0 +1,16 @@
+.textarea{
+    width: 100%;
+    appearance: none;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    border-color: #2e364f;
+    background-color: #161a2c;
+    display: block;
+    &:focus{
+        outline: none;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 70%;
+    }
+}

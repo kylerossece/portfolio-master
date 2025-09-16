@@ -1,0 +1,13 @@
+.label{
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+    &:is(:where(.peer):disabled ~ *) {
+        cursor: not-allowed;
+        opacity: 70%;
+    }
+}
+
+.danger{
+    border-color: #ff2e5b;
+}
