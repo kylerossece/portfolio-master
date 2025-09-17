@@ -1,6 +1,8 @@
 import React from "react";
 import { type ComponentProps, type ReactNode } from "react";
 import Link from "next/link";
+import styles from "@/assets/css/ui/button.module.scss";
+import clsx from "clsx";
 type ButtonProps = (
   | (ComponentProps<"button"> & {
       as?: "button";
@@ -23,10 +25,10 @@ const Button = (props: ButtonProps) => {
   }
   const { className, ref, children, ...restProps } = props;
   return (
-    <button className={className} {...restProps} ref={ref}>
+    <button className={clsx(styles.button, className)} {...restProps} ref={ref}>
       {children}
     </button>
   );
 };
 
-export default { Button };
+export { Button };

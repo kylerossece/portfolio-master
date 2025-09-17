@@ -1,19 +1,19 @@
 import React from 'react'
-import { Footer } from '../ui/footer'
+import { Section} from '@/components/ui/section'
 import { Container } from '../ui/container'
 import styles from "@/assets/css/sections/contact.module.scss";
 import { Input } from '../ui/input';
 import {Label} from "../ui/label"
 import {TextArea} from "../ui/textarea"
-import {Caption} from "@/components/ui/typography"
+import {Caption, Header} from "@/components/ui/typography"
 const Contact = () => {
   return (
-   <Footer>
+   <Section>
         <Container>
             <div className={styles.contact}>
               <div className={styles.desc}>
                   <Caption>Contact</Caption>
-                  <p>Let's connect</p>
+                  <Header>Let's connect</Header>
               </div>
             
               <form className={styles.form} > 
@@ -29,7 +29,7 @@ const Contact = () => {
        
             </div>
         </Container>
-   </Footer>
+   </Section>
   )
 }
 

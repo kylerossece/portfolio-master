@@ -1,12 +1,25 @@
+@import "../../media-queries.scss";
 .caption{
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: calc(infinity * 1px);
     margin-bottom: 1rem;
     color: var(--color-neon-green);
-    // border: 0.1px solid var(--color-neon-green);
+    border: 1px solid color-mix(in oklab, var(--color-neon-green) 20%, transparent);
     text-wrap: pretty;
-    background-color: var(--color-blue-green);
+    // background-color: var(--color-bg);
     font-size: 1rem;
     font-weight: 400;
+}
+
+.header{
+    color: var(--color-off-white);
+    text-wrap: balance;
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    @include respond-above(md){
+        font-size: 3rem;
+    }
 }

@@ -1,5 +1,61 @@
 .button {
+  display: inline-flex;
   outline: none;
-  border: none;
   cursor: pointer;
+  position: relative;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  padding: 1.5rem 3rem;
+  &::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.5s ease;
+    transform-origin: left;
+    transform: scaleX(0);
+    z-index: -1;
+  }
+
+  &:hover:not(:disabled) {
+    transform: scale(0.98);
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+  &:focus-visible {
+    outline: none;
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &.active {
+    transform: scale(1.01);
+  }
+ 
+}
+
+@mixin button-base($foreground, $background,$isGhost){
+  color: $foreground;
+  background-color: $background;
+  &::before{
+    background: $foreground;
+  }
+  @if $isGhost {
+    background-color: transparent;
+    border: 2px solid $foreground;
+  }
+
+
+}
+
+.btn-green{
+  @include button-base(var(--color-neon-green), var(--color-neon-green), false);
+}
+
+.btn-ghost-green{
+  @include button-base(var(--color-neon-green), var(--color-neon-green), true)
 }

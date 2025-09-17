@@ -6,4 +6,8 @@ const Caption = ({children, className, ...props} : ComponentProps<'p'>) => {
    return (<p className={clsx(styles.caption, className)} {...props}>{children}</p>)
 }
 
-export {Caption}
+const Header = ({children,className, ...props} : ComponentProps<'h2'>) => {
+   return (<h2 className={clsx(styles.header, className)} {...props}>{children}</h2>)
+}
+
+export {Caption, Header}
