@@ -1,0 +1,12 @@
+.caption{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: calc(infinity * 1px);
+    margin-bottom: 1rem;
+    color: var(--color-neon-green);
+    // border: 0.1px solid var(--color-neon-green);
+    text-wrap: pretty;
+    background-color: var(--color-blue-green);
+    font-size: 1rem;
+    font-weight: 400;
+}

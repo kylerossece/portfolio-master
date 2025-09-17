@@ -48,7 +48,7 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
         return (
           <SwiperSlide key={index} className={styles.swiperSlide}>
   
-            <img src="http://picsum.photos/200/300" width="400" height="600" />
+            <img src="http://picsum.photos/200/300" width="400" height="500" />
 
           </SwiperSlide>
         );

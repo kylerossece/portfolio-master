@@ -5,12 +5,14 @@ import styles from "@/assets/css/sections/contact.module.scss";
 import { Input } from '../ui/input';
 import {Label} from "../ui/label"
 import {TextArea} from "../ui/textarea"
+import {Caption} from "@/components/ui/typography"
 const Contact = () => {
   return (
    <Footer>
         <Container>
             <div className={styles.contact}>
               <div className={styles.desc}>
+                  <Caption>Contact</Caption>
                   <p>Let's connect</p>
               </div>
             

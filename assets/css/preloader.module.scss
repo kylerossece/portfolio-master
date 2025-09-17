@@ -1,5 +1,5 @@
 .preloader {
-  background-color: black;
+  background-color: var(--color-bg);
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -9,7 +9,7 @@
   width: 100svw;
   height: 100svh;
   font-weight: 200;
-  color: white;
+  color: var(--color-off-white);
 }
 
 .progress {
