@@ -1,14 +1,16 @@
+@import "../../media-queries.scss";
 .button {
   display: inline-flex;
   outline: none;
   cursor: pointer;
   position: relative;
   border-radius: 0.25rem;
+  border: none;
   overflow: hidden;
   transition: all 0.5s ease;
-  padding: 1.5rem 3rem;
-  &::before{
-    content: '';
+
+  &::before {
+    content: "";
     position: absolute;
     inset: 0;
     height: 100%;
@@ -35,27 +37,76 @@
   &.active {
     transform: scale(1.01);
   }
- 
 }
 
-@mixin button-base($foreground, $background,$isGhost){
-  color: $foreground;
+@mixin button-base(
+  $foreground,
+  $background,
+  $defaultText,
+  $hoverText,
+  $isGhost
+) {
+  color: $defaultText;
   background-color: $background;
-  &::before{
+  &::before {
     background: $foreground;
   }
-  @if $isGhost {
-    background-color: transparent;
-    border: 2px solid $foreground;
+  &:hover {
+    color: $hoverText;
   }
+  @if $isGhost {
+    border: 1px
+      solid
+      color-mix(in oklab, var(--color-neon-green) 40%, transparent);
 
-
+    background-color: transparent;
+  }
 }
 
-.btn-green{
-  @include button-base(var(--color-neon-green), var(--color-neon-green), false);
+@mixin button-size($size) {
+  @if ($size == "sm") {
+    padding: 0.5rem;
+    font-size: 0.5rem;
+  } @else if ($size == "md") {
+    padding: 1rem;
+    font-size: 1rem;
+  } @else if ($size == "lg") {
+    padding: 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    @include respond-below(lg) {
+      @include button-size(md);
+    }
+  }
 }
 
-.btn-ghost-green{
-  @include button-base(var(--color-neon-green), var(--color-neon-green), true)
+.sm {
+  @include button-size(sm);
+}
+
+.md {
+  @include button-size(md);
+}
+
+.lg {
+  @include button-size(lg);
+}
+
+.green {
+  @include button-base(
+    var(--color-bg),
+    var(--color-neon-green),
+    var(--color-bg),
+    var(--color-neon-green),
+    false
+  );
+}
+
+.ghost-green {
+  @include button-base(
+    var(--color-neon-green),
+    var(--color-neon-green),
+    var(--color-neon-green),
+    var(--color-bg),
+    true
+  );
 }

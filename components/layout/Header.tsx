@@ -18,8 +18,8 @@ const Header = () => {
       href: "/#work",
     },
     {
-      label: "Services",
-      href: "/#services",
+      label: "Contact",
+      href: "/#contact",
     },
   ] as const;
 
