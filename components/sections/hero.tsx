@@ -49,7 +49,7 @@ const Hero = () => {
     });
 
     gsap.to(`.${styles.title}`, {
-      scale: 0.8,
+      scale: 0.6,
       scrollTrigger: {
         trigger: fakeContainer.current,
         scrub: true,
@@ -79,8 +79,13 @@ const Hero = () => {
             <h1 ref={titleTextRef} className={styles.titleText}>
               Kyle Prestado <br /> Front End Developer
             </h1>
-            <div>
-              <Button type="button" variant="green" size="lg">
+            <div className={styles.buttonContainer}>
+              <Button
+                type="button"
+                variant="green"
+                size="lg"
+                className={styles.buttonOne}
+              >
                 Visit Github
               </Button>
               <Button type="button" variant="ghost-green" size="lg">

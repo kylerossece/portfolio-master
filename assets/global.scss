@@ -1,4 +1,4 @@
-@use "./media-queries.scss";
+@import "./media-queries.scss";
 
 *,
 *::before,
@@ -13,7 +13,22 @@
   --color-gray: rgb(148, 163, 184);
   --color-neon-green: rgb(94, 234, 212);
   --color-blue-green: rgb(21, 47, 76);
-  --color-off-white:rgb(226, 232, 240);
+  --color-off-white: rgb(226, 232, 240);
+  --color-light-gray: rgb(46, 54, 79);
+  --color-dark-gray: rgb(22, 26, 44);
+  --fs-xl: 6rem;
+  @include respond-below(lg) {
+    --fs-xl: 5rem;
+  }
+  @include respond-below(md) {
+    --fs-xl: 4rem;
+  }
+  @include respond-below(sm) {
+    --fs-xl: 3rem;
+  }
+  @include respond-below(xs) {
+    --fs-xl: 2rem;
+  }
 }
 html {
   -moz-text-size-adjust: none;

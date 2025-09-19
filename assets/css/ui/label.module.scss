@@ -1,12 +1,9 @@
 .label {
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
   display: block;
   color: var(--color-off-white);
-  &:is(:where(.peer):disabled ~ *) {
-    cursor: not-allowed;
-    opacity: 70%;
-  }
+  font-weight: 200;
 }
 
 .danger {

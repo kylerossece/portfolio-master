@@ -14,7 +14,7 @@ const Header = () => {
       href: "/#about",
     },
     {
-      label: "Work",
+      label: "Works",
       href: "/#work",
     },
     {

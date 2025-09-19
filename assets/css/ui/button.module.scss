@@ -57,7 +57,7 @@
   @if $isGhost {
     border: 1px
       solid
-      color-mix(in oklab, var(--color-neon-green) 40%, transparent);
+      color-mix(in oklab, var(--color-neon-green) 80%, transparent);
 
     background-color: transparent;
   }
@@ -71,7 +71,7 @@
     padding: 1rem;
     font-size: 1rem;
   } @else if ($size == "lg") {
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 2.75rem;
     font-size: 1.25rem;
     @include respond-below(lg) {
       @include button-size(md);

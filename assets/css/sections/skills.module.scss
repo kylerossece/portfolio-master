@@ -1,0 +1,35 @@
+@import "../../media-queries.scss";
+
+.skills {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skillsContainer {
+  width: 50%;
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 6rem;
+  color: var(--color-off-white);
+  & span {
+    font-size: 1rem;
+  }
+  @include respond-below(lg) {
+    gap: 1rem;
+    font-size: 5rem;
+    width: 75%;
+  }
+}
+
+.skillsIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
