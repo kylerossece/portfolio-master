@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Icons } from "../ui/icons";
 import styles from "@/assets/css/sections/projects.module.scss";
 import { Container } from "../ui/container";
+import { Paragraph, Header } from "@/components/ui/typography";
 
 type CarouselProps = {
   sectionRef: RefObject<HTMLElement | null>;
@@ -42,21 +43,37 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
       slidesOffsetBefore={30}
       freeMode={true}
       modules={[FreeMode]}
-    
     >
       {[...Array(10).keys()].map((item, index) => {
         return (
           <SwiperSlide key={index} className={styles.swiperSlide}>
-  
-            <img src="http://picsum.photos/200/300" width="400" height="500" />
-
+            <div className={styles.swiperContainer}>
+              <img
+                className={styles.swiperImage}
+                src="http://picsum.photos/200/300"
+                width="400"
+                height="500"
+              ></img>
+              <div className={styles.swiperText}>
+                <Header>Title</Header>
+                <Paragraph>Test1,Test2</Paragraph>
+              </div>
+            </div>
           </SwiperSlide>
         );
       })}
-      <button type="button" onClick={scrollPreviousSlide} className={clsx(styles.button, styles.left)}>
+      <button
+        type="button"
+        onClick={scrollPreviousSlide}
+        className={clsx(styles.button, styles.left)}
+      >
         <Icons.ChevronLeft />
       </button>
-      <button type="button" onClick={scrollNextSlide} className={clsx(styles.button, styles.right)}>
+      <button
+        type="button"
+        onClick={scrollNextSlide}
+        className={clsx(styles.button, styles.right)}
+      >
         <Icons.ChevronRight />
       </button>
     </Swiper>

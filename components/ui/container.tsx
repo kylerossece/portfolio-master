@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/assets/css/ui/container.module.scss";
 import { type ComponentProps } from "react";
-
+import clsx from "clsx";
 const Container = ({
   ref,
   children,
@@ -9,7 +9,7 @@ const Container = ({
   ...props
 }: ComponentProps<"div">) => {
   return (
-    <div ref={ref} className={styles.container} {...props}>
+    <div ref={ref} className={clsx(styles.container, className)} {...props}>
       {children}
     </div>
   );

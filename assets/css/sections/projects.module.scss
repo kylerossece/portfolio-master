@@ -1,13 +1,32 @@
 @import "../../media-queries.scss";
-.swiperSlide{
+.swiperSlide {
   width: fit-content;
   height: fit-content;
+}
+.swiperContainer {
+  position: relative;
+}
+.swiperImage {
+  border-radius: 5px;
+  border: solid 1px color-mix(in oklab, var(--color-off-white) 60%, transparent);
+  transition-property: transform, translate, scale, rotate, filter, opacity;
+
+  transition-duration: 400ms;
+  cursor: pointer;
+  &:hover {
+    opacity: 20%;
+  }
+}
+
+.swiperText {
+  position: absolute;
+  inset: 0;
+  transform: translate(37.5%, 37.5%);
 }
 .wrapper {
   margin-top: 1rem;
   width: 100%;
 }
-
 
 .buttonWrapper {
   position: relative;
@@ -26,17 +45,14 @@
   border-radius: calc(infinity * 1px);
   padding: 1rem;
   cursor: pointer;
- 
-
-
 }
 
-.right{
-   right: 0;
-   margin-right: 0.5rem;
+.right {
+  right: 0;
+  margin-right: 0.5rem;
 }
 
-.left{
+.left {
   left: 0;
   margin-left: 0.5rem;
 }
