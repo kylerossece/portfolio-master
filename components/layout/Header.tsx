@@ -54,7 +54,7 @@ const Header = () => {
         >
           <div className={styles.navGrid}>
             <div className={styles.mobileNav}>
-              <MobileNav links={links} />
+              <MobileNav links={links} handleNav={handleNav} />
             </div>
             <nav aria-label="Primary" className={styles.nav}>
               {links.map((link) => (

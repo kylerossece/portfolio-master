@@ -28,7 +28,6 @@
 }
 .mobileNav {
   display: flex;
-  align-items: center;
   @include respond-above(lg) {
     display: none;
   }

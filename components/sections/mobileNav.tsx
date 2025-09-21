@@ -6,16 +6,22 @@ import {
 } from "@/components/ui/popover";
 import styles from "@/assets/css/sections/mobileNav.module.scss";
 import clsx from "clsx";
-const MobileNav = ({
-  links,
-  className,
-}: {
-  links: readonly {
-    readonly label: string;
-    readonly href: string;
-  }[];
-  className?: any;
-}) => {
+
+type NavLink = {
+  readonly label: string;
+  readonly href: string;
+};
+
+type MobileNavProps = {
+  links: readonly NavLink[];
+  className?: string;
+  handleNav: (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    link: NavLink
+  ) => void;
+};
+
+const MobileNav = ({ links, className, handleNav }: MobileNavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
@@ -38,6 +44,24 @@ const MobileNav = ({
           </div>
         </button>
       </PopoverTrigger>
+      <PopoverContent
+        align="start"
+        side="bottom"
+        sideOffset={18}
+        alignOffset={-8}
+      >
+        <nav className={styles.mobileNav}>
+          {links.map((link) => (
+            <button
+              key={link.href}
+              className={styles.navLink}
+              onClick={(e) => handleNav(e, link)}
+            >
+              {link.label}
+            </button>
+          ))}
+        </nav>
+      </PopoverContent>
     </Popover>
   );
 };
