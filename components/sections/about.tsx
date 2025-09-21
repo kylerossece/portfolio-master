@@ -7,7 +7,7 @@ import styles from "@/assets/css/sections/about.module.scss";
 import Profile from "@/assets/image/profile.jpg";
 const About = () => {
   return (
-    <Section>
+    <Section id="about">
       <Container>
         <div className={styles.about}>
           <div className={styles.imageContainer}>

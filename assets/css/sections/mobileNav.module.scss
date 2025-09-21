@@ -1,0 +1,52 @@
+@import "../../media-queries.scss";
+
+.button {
+  &Popover {
+    border-radius: calc(infinity * 1px);
+    padding: 6px 0.75rem;
+    transition-property: all;
+    transition-duration: 500ms;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    @include respond-below(md) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &Container {
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  &Nav {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 1.5px;
+    width: 1rem;
+    background-color: var(--color-off-white);
+    transition-property: all;
+    transition-duration: 200ms;
+  }
+}
+
+.rotate {
+  top: 0.5rem;
+  rotate: 45deg;
+}
+
+.reverseRotate {
+  top: 0.5rem;
+  rotate: -45deg;
+}
+
+.top {
+  &One {
+    top: 5px;
+  }
+  &Three {
+    top: 13px;
+  }
+}

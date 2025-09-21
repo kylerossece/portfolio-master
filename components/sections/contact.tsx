@@ -9,7 +9,7 @@ import { Caption, Header, Paragraph } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
 const Contact = () => {
   return (
-    <Section>
+    <Section id="contact">
       <Container>
         <div className={styles.contact}>
           <div className={styles.desc}>

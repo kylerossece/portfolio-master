@@ -26,7 +26,13 @@
     backdrop-filter: none;
   }
 }
-
+.mobileNav {
+  display: flex;
+  align-items: center;
+  @include respond-above(lg) {
+    display: none;
+  }
+}
 .nav {
   margin-inline-start: 1rem;
   display: none;
@@ -34,6 +40,12 @@
   column-gap: 1.5rem;
   @include respond-above(lg) {
     display: flex;
+  }
+  & > button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
   }
   &Grid {
     display: grid;
@@ -59,9 +71,9 @@
       background-image: linear-gradient(
         to right,
         transparent,
-        #e5e7eb,
+        var(--color-off-white),
         transparent
-      ); /* via-neutrals-200 */
+      );
       transition: transform 0.3s ease;
       transform-origin: center;
     }

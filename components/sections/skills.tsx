@@ -57,7 +57,7 @@ const Skills = () => {
     },
   ] as const;
   return (
-    <Section>
+    <Section id="skills">
       <Container>
         <div className={styles.skills}>
           <Caption>Skills & Experience</Caption>
