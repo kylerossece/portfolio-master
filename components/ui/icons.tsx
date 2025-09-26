@@ -10,6 +10,8 @@ import {
   FaNode,
   FaPhp,
   FaBootstrap,
+  FaLinkedin,
+  FaGithubSquare,
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -19,6 +21,7 @@ import {
 } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { IoIosMail } from "react-icons/io";
 
 import React from "react";
 
@@ -40,6 +43,9 @@ const Icons = {
   Git: FaGitAlt,
   Photoshop: SiAdobephotoshop,
   Figma: IoLogoFigma,
+  LinkedIn: FaLinkedin,
+  Github: FaGithubSquare,
+  Mail: IoIosMail,
 } as const;
 
 export { Icons, type IconProps };

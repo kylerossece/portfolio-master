@@ -7,6 +7,7 @@ import { Label } from "../ui/label";
 import { TextArea } from "../ui/textarea";
 import { Caption, Header, Paragraph } from "@/components/ui/typography";
 import { Button } from "@/components/ui/button";
+import { SocialLinks } from "@/components/ui/links";
 const Contact = () => {
   return (
     <Section id="contact">
@@ -21,6 +22,7 @@ const Contact = () => {
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s,
             </Paragraph>
+            <SocialLinks />
           </div>
 
           <form className={styles.form}>
