@@ -20,6 +20,8 @@
   font-size: 1.8rem;
   margin-bottom: 1rem;
   line-height: 1.25;
+  opacity: 0;
+  overflow: hidden;
   @include respond-above(md) {
     font-size: 3rem;
   }
