@@ -22,6 +22,7 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
     if (headerRef.current) {
+      // @ts-ignore
       headerRef.current.style.opacity = 1;
       const splitText = new SplitText(headerRef.current, {
         type: "words, chars",
@@ -43,6 +44,7 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
         stagger: 0.01,
         onComplete: () => {
           headerRef.current.classList.add(`animated`);
+         
         },
       });
     }

@@ -1,11 +1,16 @@
-import React from "react";
+"use client";
+import React, {useRef} from "react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Caption, Header, Paragraph } from "@/components/ui/typography";
 import { Icons } from "@/components/ui/icons";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "@/assets/css/sections/skills.module.scss";
 
 const Skills = () => {
+  const skillsContainerRef = useRef(null);
   const IconList = [
     {
       id: 1,
@@ -56,6 +61,37 @@ const Skills = () => {
       icon: "Figma",
     },
   ] as const;
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const skills = document.querySelectorAll(`.${styles.skillsIcon}`);
+    if(skillsContainerRef.current) {
+      // @ts-ignore
+      skillsContainerRef.current.style.opacity = '1';
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: skillsContainerRef.current,
+          toggleActions: "restart pause resume reverse",
+          start: "top 90%",
+        },
+      });
+
+      tl.from(skills, {
+        duration: 0.4,
+        opacity: 0,
+        delay: 0.4,
+        y: 120,    
+        ease: "power1.out",
+        stagger: 0.1,
+        onComplete: () => {
+          skillsContainerRef.current?.classList.add(`animated`);
+        }
+      });
+
+
+    }
+  })
   return (
     <Section id="skills">
       <Container>
@@ -70,7 +106,7 @@ const Skills = () => {
             only five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged. It w
           </Paragraph>
-          <div className={styles.skillsContainer}>
+          <div className={styles.skillsContainer} ref={skillsContainerRef}>
             {IconList.map((item) => {
               const IconComponent = Icons[item.icon as keyof typeof Icons];
               return (
