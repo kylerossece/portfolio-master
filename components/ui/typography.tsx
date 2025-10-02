@@ -43,8 +43,8 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
         ease: "power1.out",
         stagger: 0.01,
         onComplete: () => {
+          // @ts-ignore
           headerRef.current.classList.add(`animated`);
-         
         },
       });
     }

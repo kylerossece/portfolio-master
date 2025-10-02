@@ -77,7 +77,7 @@ const Hero = () => {
         <Container>
           <div className={styles.title} ref={titleRef}>
             <h1 ref={titleTextRef} className={styles.titleText}>
-              Kyle Prestado <br /> Front End Developer
+              Kyle Prestado <br /> Front-End Developer
             </h1>
             <div className={styles.buttonContainer}>
               <Button

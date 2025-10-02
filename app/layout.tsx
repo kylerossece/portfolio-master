@@ -9,6 +9,13 @@ const inter = Inter({
   display: "swap",
 });
 
+export const metadata = {
+  title: "Kyle Prestado - Front-End Developer",
+  icons: {
+    icon: "/next.svg",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

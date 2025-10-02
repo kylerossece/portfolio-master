@@ -2,7 +2,7 @@
 import React, { RefObject, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
@@ -12,10 +12,12 @@ import { Swiper as SwiperClass } from "swiper/types";
 import { Pagination, FreeMode } from "swiper/modules";
 import Link from "next/link";
 // import Image from "next/image";
-import { Icons } from "../ui/icons";
+import { Icons } from "@/components/ui/icons";
+import { SplitText } from "gsap/SplitText";
 import styles from "@/assets/css/sections/projects.module.scss";
-import { Container } from "../ui/container";
+
 import { Paragraph, Header } from "@/components/ui/typography";
+import { text } from "stream/consumers";
 
 type CarouselProps = {
   sectionRef: RefObject<HTMLElement | null>;
@@ -23,7 +25,6 @@ type CarouselProps = {
 
 const Carousel = ({ sectionRef }: CarouselProps) => {
   const swiperRef = useRef<SwiperClass | null>(null);
-  const { contextSafe } = useGSAP({ scope: sectionRef });
 
   const scrollPreviousSlide = () => {
     swiperRef.current?.slidePrev();
@@ -31,6 +32,35 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
   const scrollNextSlide = () => {
     swiperRef.current?.slideNext();
   };
+
+  useGSAP(() => {
+    gsap.registerPlugin(SplitText);
+
+    const slides = document.querySelectorAll(`.${styles.swiperSlide}`);
+
+    slides.forEach((slide) => {
+      const text = slide.querySelector(`.${styles.swiperText}`);
+      if (!text) return;
+
+      gsap.set(text, { opacity: 1 });
+
+      const split = new SplitText(text, {
+        type: "words, chars",
+      });
+
+      const tl = gsap.timeline({ paused: true });
+
+      tl.from(split.words, {
+        duration: 0.4,
+        opacity: 0,
+        y: 120,
+        ease: "power1.out",
+      });
+
+      slide.addEventListener("mouseenter", () => tl.play());
+      slide.addEventListener("mouseleave", () => tl.reverse());
+    });
+  }, []);
   return (
     <Swiper
       onBeforeInit={(swiper) => {
@@ -55,7 +85,7 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
                 height="500"
               ></img>
               <div className={styles.swiperText}>
-                <Header>Title</Header>
+                <h1>Title</h1>
                 <Paragraph>Test1,Test2</Paragraph>
               </div>
             </div>
