@@ -48,6 +48,7 @@
 ) {
   color: $defaultText;
   background-color: $background;
+  border: solid 1px var(--color-neon-green);
   &::before {
     background: $foreground;
   }

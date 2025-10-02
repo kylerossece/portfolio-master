@@ -7,7 +7,8 @@
   border-radius: 0.5rem;
   transition: all 0.3s ease;
   border: 1px solid color-mix(in oklab, var(--color-off-white) 20%, transparent);
-  background-color: color-mix(in oklab, var(--color-bg) 80%, transparent);
+  background-color: color-mix(in oklab, var(--color-dark-bg) 80%, transparent);
   backdrop-filter: blur(8px);
   margin-top: 0.5rem;
+  margin-right: 2rem;
 }

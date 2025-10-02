@@ -9,14 +9,6 @@
 }
 .swiperImage {
   border-radius: 5px;
-  border: solid 1px color-mix(in oklab, var(--color-off-white) 60%, transparent);
-  transition-property: transform, translate, scale, rotate, filter, opacity;
-
-  transition-duration: 400ms;
-  cursor: pointer;
-  &:hover {
-    opacity: 20%;
-  }
 }
 
 .swiperText {
@@ -51,16 +43,20 @@
 
 .button {
   position: absolute;
-  border-color: #2e364f;
+  border: solid 2px
+    color-mix(in oklab, var(--color-light-gray) 90%, transparent);
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
   background-color: color-mix(in oklab, #060918 90%, transparent);
-  color: #f0f2fe;
+  color: var(--color-off-white);
   height: fit-content;
   border-radius: calc(infinity * 1px);
-  padding: 1rem;
+  padding: 1rem 1.1rem;
   cursor: pointer;
+  &:hover {
+    padding: 1.1rem 1.2rem;
+  }
 }
 
 .right {

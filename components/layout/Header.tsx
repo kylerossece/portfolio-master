@@ -53,9 +53,16 @@ const Header = () => {
           )}
         >
           <div className={styles.navGrid}>
+            <div>
+              <a href="/" className={styles.logo}>
+                {" "}
+                KP
+              </a>
+            </div>
             <div className={styles.mobileNav}>
               <MobileNav links={links} handleNav={handleNav} />
             </div>
+
             <nav aria-label="Primary" className={styles.nav}>
               {links.map((link) => (
                 <button key={link.href} onClick={(e) => handleNav(e, link)}>

@@ -8,7 +8,7 @@ const Footer = () => {
     <FooterContainer>
       <Container className={styles.footerContainer}>
         <Paragraph>© Kyle Ross Prestado</Paragraph>
-        <Paragraph>Powered by Next.js</Paragraph>
+        <Paragraph>Built with Next.js and GSAP</Paragraph>
       </Container>
     </FooterContainer>
   );

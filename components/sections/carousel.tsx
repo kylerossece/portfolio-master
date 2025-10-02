@@ -14,10 +14,9 @@ import Link from "next/link";
 // import Image from "next/image";
 import { Icons } from "@/components/ui/icons";
 import { SplitText } from "gsap/SplitText";
-import styles from "@/assets/css/sections/projects.module.scss";
+import styles from "@/assets/css/sections/carousel.module.scss";
 
-import { Paragraph, Header } from "@/components/ui/typography";
-import { text } from "stream/consumers";
+import { Paragraph } from "@/components/ui/typography";
 
 type CarouselProps = {
   sectionRef: RefObject<HTMLElement | null>;
@@ -56,6 +55,19 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
         y: 120,
         ease: "power1.out",
       });
+
+      const image = slide.querySelector(`.${styles.swiperImage}`);
+      if (image) {
+        tl.to(
+          image,
+          {
+            duration: 0.4,
+            opacity: 0.3,
+            ease: "power1.out",
+          },
+          0
+        );
+      }
 
       slide.addEventListener("mouseenter", () => tl.play());
       slide.addEventListener("mouseleave", () => tl.reverse());
