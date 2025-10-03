@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <Container className={styles.footerContainer}>
-        <Paragraph>© Kyle Ross Prestado</Paragraph>
+        <Paragraph>©{new Date().getFullYear()} Kyle Ross Prestado</Paragraph>
         <Paragraph>Built with Next.js and GSAP</Paragraph>
       </Container>
     </FooterContainer>

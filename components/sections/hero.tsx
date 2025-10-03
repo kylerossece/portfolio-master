@@ -81,6 +81,8 @@ const Hero = () => {
             </h1>
             <div className={styles.buttonContainer}>
               <Button
+                as="link"
+                href="https://github.com/kylerossece"
                 type="button"
                 variant="green"
                 size="lg"
@@ -88,7 +90,13 @@ const Hero = () => {
               >
                 Visit Github
               </Button>
-              <Button type="button" variant="ghost-green" size="lg">
+              <Button
+                as="link"
+                type="button"
+                href="/Resume.pdf"
+                variant="ghost-green"
+                size="lg"
+              >
                 View Resume
               </Button>
             </div>

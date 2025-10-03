@@ -37,7 +37,11 @@
   letter-spacing: 3px;
   font-size: 1.75rem;
   margin-inline-start: 2rem;
+
   color: var(--color-off-white);
+  @include respond-below(md) {
+    margin-inline-start: 1rem;
+  }
 }
 .mobileNav {
   display: flex;

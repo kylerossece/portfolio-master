@@ -2,7 +2,6 @@
 import React, { RefObject, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
@@ -10,8 +9,9 @@ import clsx from "clsx";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperClass } from "swiper/types";
 import { Pagination, FreeMode } from "swiper/modules";
+import { SwiperData } from "@/data/data";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { Icons } from "@/components/ui/icons";
 import { SplitText } from "gsap/SplitText";
 import styles from "@/assets/css/sections/carousel.module.scss";
@@ -86,24 +86,30 @@ const Carousel = ({ sectionRef }: CarouselProps) => {
       freeMode={true}
       modules={[FreeMode]}
     >
-      {[...Array(10).keys()].map((item, index) => {
-        return (
-          <SwiperSlide key={index} className={styles.swiperSlide}>
-            <div className={styles.swiperContainer}>
-              <img
-                className={styles.swiperImage}
-                src="http://picsum.photos/200/300"
-                width="400"
-                height="500"
-              ></img>
-              <div className={styles.swiperText}>
-                <h1>Title</h1>
-                <Paragraph>Test1,Test2</Paragraph>
-              </div>
-            </div>
-          </SwiperSlide>
-        );
-      })}
+      {SwiperData &&
+        SwiperData.length &&
+        SwiperData.map((item) => {
+          return (
+            <SwiperSlide key={item.id} className={styles.swiperSlide}>
+              <Link
+                href={`project/${item.link}`}
+                className={styles.swiperContainer}
+              >
+                <Image
+                  className={styles.swiperImage}
+                  src={item.image}
+                  width={400}
+                  height={500}
+                  alt={item.title}
+                ></Image>
+                <div className={styles.swiperText}>
+                  <h1>{item.title}</h1>
+                  <Paragraph>{item.description}</Paragraph>
+                </div>
+              </Link>
+            </SwiperSlide>
+          );
+        })}
       <button
         type="button"
         onClick={scrollPreviousSlide}

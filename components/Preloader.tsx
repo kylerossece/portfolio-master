@@ -4,8 +4,9 @@ import styles from "@/assets/css/preloader.module.scss";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+
 interface PreloaderProps {
-  onComplete: () => void;
+  onComplete?: () => void;
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
@@ -34,7 +35,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               duration: 0.8,
               ease: "sine.out",
               onUpdate: () => {
-                if (tl2.progress() >= 0.4) {
+                if (tl2.progress() >= 0.4 && onComplete) {
                   onComplete();
                 }
               },
