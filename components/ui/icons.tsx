@@ -19,9 +19,10 @@ import {
   SiMongodb,
   SiAdobephotoshop,
 } from "react-icons/si";
-import { FaGitAlt } from "react-icons/fa6";
+import { FaGitAlt, FaArrowLeftLong } from "react-icons/fa6";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { IoIosMail } from "react-icons/io";
+import { MdRemoveRedEye } from "react-icons/md";
 
 import React from "react";
 
@@ -46,6 +47,8 @@ const Icons = {
   LinkedIn: FaLinkedin,
   Github: FaGithubSquare,
   Mail: IoIosMail,
+  RedEye: MdRemoveRedEye,
+  ArrowLeft: FaArrowLeftLong,
 } as const;
 
 export { Icons, type IconProps };

@@ -1,0 +1,19 @@
+.project {
+  &Link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &Button {
+    padding: 1rem 0 1.5rem 0;
+  }
+}
+
+.homeLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--color-off-white);
+  font-size: 1rem;
+  padding: 1rem 0 2rem 0;
+}

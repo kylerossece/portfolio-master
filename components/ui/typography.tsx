@@ -50,7 +50,7 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
     }
   });
   return (
-    <h2 className={clsx(styles.header)} ref={headerRef} {...props}>
+    <h2 className={clsx(styles.header, className)} ref={headerRef} {...props}>
       {children}
     </h2>
   );
