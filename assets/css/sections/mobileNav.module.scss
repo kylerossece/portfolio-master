@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 
 .button {
   &Popover {
@@ -10,7 +10,7 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    @include respond-below(md) {
+    @include mq.respond-below(md) {
       padding: 0.5rem 1rem;
     }
   }

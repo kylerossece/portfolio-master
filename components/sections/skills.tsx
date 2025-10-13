@@ -1,5 +1,5 @@
 "use client";
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import { Section } from "@/components/ui/section";
 import { Container } from "@/components/ui/container";
 import { Caption, Header, Paragraph } from "@/components/ui/typography";
@@ -65,9 +65,9 @@ const Skills = () => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger);
     const skills = document.querySelectorAll(`.${styles.skillsIcon}`);
-    if(skillsContainerRef.current) {
+    if (skillsContainerRef.current) {
       // @ts-ignore
-      skillsContainerRef.current.style.opacity = '1';
+      skillsContainerRef.current.style.opacity = "1";
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -81,17 +81,15 @@ const Skills = () => {
         duration: 0.4,
         opacity: 0,
         delay: 0.4,
-        y: 120,    
+        y: 120,
         ease: "power1.out",
         stagger: 0.1,
-        onComplete: () => {
-          skillsContainerRef.current?.classList.add(`animated`);
-        }
+        // onComplete: () => {
+        //   skillsContainerRef.current?.classList.add(`animated`);
+        // }
       });
-
-
     }
-  })
+  });
   return (
     <Section id="skills">
       <Container>

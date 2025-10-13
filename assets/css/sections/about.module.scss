@@ -1,10 +1,10 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 
 .about {
   display: flex;
   flex-direction: row;
   gap: 3rem;
-  @include respond-below(md) {
+  @include mq.respond-below(md) {
     flex-direction: column;
   }
 }
@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  @include respond-below(md) {
+  @include mq.respond-below(md) {
     justify-content: start;
     align-items: center;
   }

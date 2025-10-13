@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 .button {
   display: inline-flex;
   outline: none;
@@ -74,7 +74,7 @@
   } @else if ($size == "lg") {
     padding: 1.25rem 2.75rem;
     font-size: 1.25rem;
-    @include respond-below(lg) {
+    @include mq.respond-below(lg) {
       @include button-size(md);
     }
   }

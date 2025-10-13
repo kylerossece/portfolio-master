@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 
 .skills {
   text-align: center;
@@ -20,7 +20,7 @@
   & span {
     font-size: 1rem;
   }
-  @include respond-below(lg) {
+  @include mq.respond-below(lg) {
     gap: 1rem;
     font-size: 5rem;
     width: 75%;

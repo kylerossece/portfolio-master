@@ -10,14 +10,16 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "@/assets/css/sections/project.module.scss";
 
-interface PageProps {
-  params: { slug: string };
-}
 async function getProjectBySlug(slug: string) {
   return ProjectData.find((item) => item.slug === slug);
 }
+
+interface PageProps {
+  params: any;
+}
+
 export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const project = await getProjectBySlug(slug);
 
   if (!project) {

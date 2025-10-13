@@ -1,4 +1,4 @@
-@import "@/assets/media-queries.scss";
+@use "@/assets/media-queries.scss" as mq;
 
 .hero {
   position: sticky;

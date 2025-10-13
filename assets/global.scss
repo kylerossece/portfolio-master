@@ -1,4 +1,4 @@
-@import "./media-queries.scss";
+@use "./media-queries.scss" as mq;
 
 *,
 *::before,
@@ -18,16 +18,16 @@
   --color-light-gray: rgb(46, 54, 79);
   --color-dark-gray: rgb(22, 26, 44);
   --fs-xl: 6rem;
-  @include respond-below(lg) {
+  @include mq.respond-below(lg) {
     --fs-xl: 5rem;
   }
-  @include respond-below(md) {
+  @include mq.respond-below(md) {
     --fs-xl: 4rem;
   }
-  @include respond-below(sm) {
+  @include mq.respond-below(sm) {
     --fs-xl: 3rem;
   }
-  @include respond-below(xs) {
+  @include mq.respond-below(xs) {
     --fs-xl: 2rem;
   }
 }

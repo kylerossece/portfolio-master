@@ -1,10 +1,10 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 
 .container {
   margin-inline: auto;
   max-width: 96rem;
   width: calc(11 / 12 * 100%);
-  @include respond-above(xl) {
+  @include mq.respond-above(xl) {
     width: calc(4 / 5 * 100%);
   }
 }

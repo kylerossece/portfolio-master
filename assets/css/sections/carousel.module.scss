@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 .swiperSlide {
   width: fit-content;
   height: fit-content;

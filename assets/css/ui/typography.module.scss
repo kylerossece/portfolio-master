@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 .caption {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -22,7 +22,7 @@
   line-height: 1.25;
   opacity: 0;
   overflow: hidden;
-  @include respond-above(md) {
+  @include mq.respond-above(md) {
     font-size: 3rem;
   }
 }

@@ -1,4 +1,4 @@
-@import "../../media-queries.scss";
+@use "../../media-queries.scss" as mq;
 
 .header {
   position: fixed;
@@ -39,7 +39,7 @@
   margin-inline-start: 2rem;
 
   color: var(--color-off-white);
-  @include respond-below(md) {
+  @include mq.respond-below(md) {
     margin-inline-start: 1rem;
   }
 }
@@ -48,7 +48,7 @@
   justify-content: end;
   align-items: center;
 
-  @include respond-above(lg) {
+  @include mq.respond-above(lg) {
     display: none;
   }
 }
@@ -58,7 +58,7 @@
   align-items: center;
   justify-content: end;
   column-gap: 1.5rem;
-  @include respond-above(lg) {
+  @include mq.respond-above(lg) {
     display: flex;
   }
   & > button {
