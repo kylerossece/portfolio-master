@@ -1,100 +1,83 @@
 import Placeholder from "@/assets/image/placeholder.png";
-import { link } from "fs";
-
+import Surf2Sawa from "@/assets/image/Surf2Sawa.png";
+import Chatbot from "@/assets/image/Chatbot.jpg";
+import Travel from "@/assets/image/Travel.png";
+import MMO from "@/assets/image/MMO.png";
+import Surf2Sawa1 from "@/assets/image/Surf2Sawa/Surf2Sawa1.png";
+import Surf2Sawa2 from "@/assets/image/Surf2Sawa/Surf2Sawa2.png";
+import Surf2Sawa3 from "@/assets/image/Surf2Sawa/Surf2Sawa3.png";
+import Surf2Sawa4 from "@/assets/image/Surf2Sawa/Surf2Sawa4.png";
+import Chatbot1 from "@/assets/image/Chatbot/Chatbot1.png";
+import Travel1 from "@/assets/image/Travel/Travel1.png";
+import Travel2 from "@/assets/image/Travel/Travel2.png";
+import MMO1 from "@/assets/image/MMO/MMO1.png";
+import MMO2 from "@/assets/image/MMO/MMO2.png";
 const SwiperData = [
   {
     id: 1,
-    title: "Project One",
-    image: Placeholder,
-    description: "Website Design",
-    link: "/project-one",
+    title: "Surf2Sawa",
+    image: Surf2Sawa,
+    description: "Public Website of S2S",
+    link: "/Surf2Sawa",
   },
   {
     id: 2,
-    title: "Project Two",
-    image: Placeholder,
-    description: "Website Design 2",
-    link: "/project-two",
+    title: "S2S Chatbot",
+    image: Chatbot,
+    description: "Chatbot for Prepaid users",
+    link: "/Chatbot",
   },
   {
     id: 3,
-    title: "Project Three",
-    image: Placeholder,
-    description: "Website Design 3",
-    link: "/project-three",
+    title: "Travel Guide",
+    image: Travel,
+    description: "Travel Guide with Google Maps",
+    link: "/travel-guide",
   },
   {
     id: 4,
-    title: "Project Four",
-    image: Placeholder,
+    title: "MMO Daily",
+    image: MMO,
     description: "Website Design 4",
-    link: "/project-four",
-  },
-  {
-    id: 5,
-    title: "Project Five",
-    image: Placeholder,
-    description: "Website Design 5",
-    link: "/project-five",
-  },
-  {
-    id: 6,
-    title: "Project Six",
-    image: Placeholder,
-    description: "Website Design 6",
-    link: "/project-six",
+    link: "/mmo-daily",
   },
 ];
 
 const ProjectData = [
   {
     id: 1,
-    title: "Project One",
-    slug: "project-one",
-    images: [Placeholder, Placeholder, Placeholder],
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
+    title: "Surf2Sawa",
+    slug: "Surf2Sawa",
+    images: [Surf2Sawa1, Surf2Sawa2, Surf2Sawa3, Surf2Sawa4],
+    description: "Website for Surf2Sawa created with Vue and SCSS.",
     link: "https://surf2sawa.com/?source=surf2sawa",
   },
   {
     id: 2,
-    title: "Project Two",
-    slug: "project-two",
-    images: [Placeholder, Placeholder, Placeholder],
-    description: "Website Design 2 ",
-    link: "https://surf2sawa.com/?source=surf2sawa",
+    title: "S2S Chatbot",
+    slug: "Chatbot",
+    images: [Chatbot1],
+    description:
+      "Chatbot for Surf2Sawa Subscribers created with Websocket and Tailwind.",
+    link: "https://chat.s2s.ph/",
   },
   {
     id: 3,
-    title: "Project Three",
-    slug: "project-three",
-    images: [Placeholder, Placeholder, Placeholder],
-    description: "Website Design 3",
-    link: "https://surf2sawa.com/?source=surf2sawa",
+    title: "Travel Guide",
+    slug: "travel-guide",
+    images: [Travel1, Travel2],
+    description:
+      "A Travel Guide which allows user to view tourist attractions in their intended destination. Built with Google Maps API, Travel Advisor API, and React.",
+    link: "https://travel-guide-hcoa.vercel.app/",
   },
   {
     id: 4,
-    title: "Project Four",
-    slug: "project-four",
-    images: [Placeholder, Placeholder, Placeholder],
-    description: "Website Design 4",
-    link: "https://surf2sawa.com/?source=surf2sawa",
-  },
-  {
-    id: 5,
-    title: "Project Five",
-    slug: "project-five",
-    images: [Placeholder, Placeholder, Placeholder],
-    description: "Website Design 5",
-    link: "https://surf2sawa.com/?source=surf2sawa",
-  },
-  {
-    id: 6,
-    title: "Project Six",
-    slug: "project-six",
-    images: [Placeholder, Placeholder, Placeholder],
-    description: "Website Design 6",
-    link: "https://surf2sawa.com/?source=surf2sawa",
+    title: "MMO Daily",
+    slug: "mmo-daily",
+    images: [MMO1, MMO2],
+    description:
+      "A Website created with the MMO Bomb API and inspired by Steam interface.",
+    link: "https://mmo-daily.vercel.app/",
   },
 ];
 

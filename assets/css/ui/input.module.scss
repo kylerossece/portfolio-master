@@ -9,6 +9,7 @@
   color: var(--color-off-white);
   caret-color: var(--color-off-white);
   display: block;
+  transition: border 0.3s ease-in;
   &:focus {
     border: solid 1px var(--color-neon-green);
   }

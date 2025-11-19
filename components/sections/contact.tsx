@@ -18,22 +18,27 @@ const Contact = () => {
             <Header>Let's connect</Header>
             <Paragraph>
               {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s,
+              Send me a message through here or visit my personal links below.
             </Paragraph>
             <SocialLinks />
           </div>
 
-          <form className={styles.form}>
+          <form
+            className={styles.form}
+            action="mailto:kylerossprestado@gmail.com"
+            method="POST"
+          >
             <fieldset className={styles.fieldset}>
               <Label htmlFor="email">Email</Label>
-              <Input type="email" id="email" />
+              <Input type="email" id="email" name="email" required />
+
               <Label htmlFor="subject">Subject</Label>
-              <Input type="text" id="subject" />
+              <Input type="text" id="subject" name="subject" required />
+
               <Label htmlFor="message">Message</Label>
-              <TextArea id="message" />
+              <TextArea id="message" name="message" required />
             </fieldset>
+
             <div className={styles.submit}>
               <Button type="submit" variant="green" size="md">
                 Send message

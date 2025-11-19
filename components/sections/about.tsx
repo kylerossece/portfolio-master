@@ -20,14 +20,22 @@ const About = () => {
           <div className={styles.textContainer}>
             <Caption>About</Caption>
             <Header>My story</Header>
-            <Paragraph>
+            <Paragraph className={styles.paragraph}>
               {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It w
+              I graduated with an Electronics Engineering degree but failed the
+              board exam. Struggling to find work, I've decided to enroll in a
+              coding bootcamp in Zuitt and Uplift Code Camp where I learned
+              Full-stack development with React and Node. There I was able to
+              find my passion programming, building websites from scratch and
+              learning to have fun in fixing bugs in my code.
+            </Paragraph>
+            <Paragraph className={styles.paragraph}>
+              {" "}
+              I'm now currently working as a Junior Front-end Developer in
+              JK2L2, provider of Surf2Sawa which is the prepaid plan of Converge
+              ICT where I develop internal dashboards, public domain websites
+              such as surf2sawa.com and chat.s2s.ph, and websites for their
+              compartners like Sky Cable and PC Fiber.
             </Paragraph>
           </div>
         </div>

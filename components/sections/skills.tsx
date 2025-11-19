@@ -97,12 +97,9 @@ const Skills = () => {
           <Caption>Skills & Experience</Caption>
           <Header>Technologies I'm using</Header>
           <Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It w
+            I'm fond of learning anything to enhance my Front-end development
+            skills from performance improvement to animation. Right now, these
+            are the technologies I'm comfortable working with.
           </Paragraph>
           <div className={styles.skillsContainer} ref={skillsContainerRef}>
             {IconList.map((item) => {

@@ -42,10 +42,6 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
         y: 120,
         ease: "power1.out",
         stagger: 0.01,
-        // onComplete: () => {
-        //   // @ts-ignore
-        //   headerRef.current.classList.add(`animated`);
-        // },
       });
     }
   });
@@ -58,7 +54,7 @@ const Header = ({ children, className, ...props }: ComponentProps<"h2">) => {
 
 const Paragraph = ({ children, className, ...props }: ComponentProps<"p">) => {
   return (
-    <p className={clsx(styles.paragraph)} {...props}>
+    <p className={clsx(styles.paragraph, className)} {...props}>
       {children}
     </p>
   );

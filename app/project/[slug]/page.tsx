@@ -28,7 +28,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <>
-      <Preloader />
+      <Preloader noText={true} />
       <Section className={styles.project}>
         <Container>
           <Link href="/" className={styles.homeLink}>

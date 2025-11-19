@@ -7,9 +7,10 @@ import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 interface PreloaderProps {
   onComplete?: () => void;
+  noText?: boolean;
 }
 
-const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
+const Preloader: React.FC<PreloaderProps> = ({ onComplete, noText }) => {
   const container = React.useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -19,31 +20,38 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
       const tl = gsap.timeline();
       const tl2 = gsap.timeline();
-
-      tl.to(
-        `.${styles.progress}`,
-        {
-          duration: 0.8,
-          scrambleText: {
-            text: "Kyle Prestado Portfolio",
-            revealDelay: 0.1,
-            oldClass: `${styles.old}`,
+      if (!noText) {
+        tl.to(
+          `.${styles.progress}`,
+          {
+            duration: 0.8,
+            scrambleText: {
+              text: "Kyle Prestado Portfolio",
+              revealDelay: 0.1,
+              oldClass: `${styles.old}`,
+            },
+            onComplete: () => {
+              tl2.to(container.current, {
+                yPercent: -100,
+                duration: 0.8,
+                ease: "sine.out",
+                onUpdate: () => {
+                  if (tl2.progress() >= 0.4 && onComplete) {
+                    onComplete();
+                  }
+                },
+              });
+            },
           },
-          onComplete: () => {
-            tl2.to(container.current, {
-              yPercent: -100,
-              duration: 0.8,
-              ease: "sine.out",
-              onUpdate: () => {
-                if (tl2.progress() >= 0.4 && onComplete) {
-                  onComplete();
-                }
-              },
-            });
-          },
-        },
-        0
-      );
+          0
+        );
+      } else {
+        tl2.to(container.current, {
+          yPercent: -100,
+          duration: 1.0,
+          ease: "sine.out",
+        });
+      }
     },
     {
       scope: container,

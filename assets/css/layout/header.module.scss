@@ -19,7 +19,7 @@
       color-mix(in oklab, var(--color-off-white) 20%, transparent);
     background-color: color-mix(
       in oklab,
-      var(--color-dark-bg) 80%,
+      var(--color-dark-bg) 50%,
       transparent
     );
     backdrop-filter: blur(6px);
